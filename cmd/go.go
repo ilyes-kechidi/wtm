@@ -41,5 +41,6 @@ var goCmd = &cobra.Command{
 }
 
 func init() {
+	goCmd.ValidArgsFunction = completeWorktreeBranches
 	rootCmd.AddCommand(goCmd)
 }

@@ -86,10 +86,12 @@ var addCmd = &cobra.Command{
 }
 
 func init() {
+	addCmd.ValidArgsFunction = completeUnusedLocalBranches
 	addCmd.Flags().StringVar(&addBase, "base", "", "base ref for new branches (default HEAD)")
 	addCmd.Flags().BoolVar(&addNoEnv, "no-env", false, "skip copying env files")
 	addCmd.Flags().BoolVar(&addNoSetup, "no-setup", false, "skip post-create setup commands")
 	addCmd.Flags().StringSliceVar(&addCopyEnv, "copy-env", nil, "extra env globs (relative to repo root)")
 	addCmd.Flags().BoolVar(&addAllowDirty, "allow-dirty", false, "allow creating while main repo is dirty")
+	_ = addCmd.RegisterFlagCompletionFunc("base", completeBaseRefs)
 	rootCmd.AddCommand(addCmd)
 }

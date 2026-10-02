@@ -8,7 +8,8 @@ with `WTM_ROOT`.
 
 ```sh
 go install github.com/ilyes-kechidi/wtm@latest
-# shell integration for `wtm go` (cd into worktrees):
+# shell integration for `wtm go` (cd into worktrees) and branch
+# completion for add, go, and remove:
 eval "$(wtm init bash)"   # or zsh | fish — add to your rc
 ```
 

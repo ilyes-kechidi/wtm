@@ -137,6 +137,7 @@ func stillRegistered(repo, dest string) bool {
 }
 
 func init() {
+	removeCmd.ValidArgsFunction = completeWorktreeBranches
 	removeCmd.Flags().BoolVar(&rmForce, "force", false, "remove even when dirty/unpushed; also deletes untracked and ignored files")
 	removeCmd.Flags().BoolVar(&rmWithBranch, "with-branch", false, "also delete the branch")
 	rootCmd.AddCommand(removeCmd)
