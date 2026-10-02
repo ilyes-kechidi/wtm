@@ -1,0 +1,23 @@
+# Binaries
+/wtm
+*.exe
+*.out
+
+# Go build cache / test output
+*.test
+*.prof
+
+# Go workspace file (local only)
+go.work
+go.work.sum
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Local env / secrets (copied by wtm at runtime, never committed)
+.env
+.env.*
+!.env.example
